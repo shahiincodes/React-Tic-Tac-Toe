@@ -9,6 +9,7 @@ const Board = () => {
         const newSquares =  square.slice()
         if(square[i]){
             alert("This box is already filled")
+            return
         }
         if (isX) {
             newSquares[i] = 'X'
