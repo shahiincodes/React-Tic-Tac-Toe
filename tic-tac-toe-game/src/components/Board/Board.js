@@ -4,12 +4,21 @@ import './Board.css'
 
 const Board = () => {
     const [square,setSquare] = useState(Array(9).fill(null))
+    const [isX,setIsx] = useState(true)
     const handleClick = (i)=>{
         const newSquares =  square.slice()
-        newSquares[i] = 'X'
+        if(square[i]){
+            alert("This box is already filled")
+        }
+        if (isX) {
+            newSquares[i] = 'X'
+        } else {
+            newSquares[i] = 'O'
+        }
         setSquare(newSquares)
-        console.log("jv")
+        setIsx(!isX)
     }
+  
   return (
     <div className='board'>
         <div className="lines">
